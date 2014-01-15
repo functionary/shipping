@@ -1,5 +1,23 @@
 package ups
 
+/*
+In order to work with the UPS servers peaceably, there's some trickery in play.
+UPS specifies a number of XML types that may be included zero or one times
+based on the type of transaction, but the UPS servers are very picky. For
+example, the Rate Request wants most of those structures to be included zero
+times, or else an error will be thrown.
+
+To deal with this problem, the request structs often are defined with slices of
+sub-structs. Because of the way the XML processor works, if there are zero
+objects in the slice, no XML is rendered for the sub-struct.
+
+The alternative is to create distinct kinds of sub-structs depending on the kind
+of request.
+
+At some point, we might think about validating for the correct number of 
+sub-structs before requests are actually made. 
+*/
+
 import ()
 
 type AddressType struct {

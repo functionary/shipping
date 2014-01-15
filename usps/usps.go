@@ -139,7 +139,7 @@ type RatedShipment struct {
 }
 
 type Shipper struct {
-	Address       geo.Address
+	Address       Address
 	ShipperNumber string
 }
 

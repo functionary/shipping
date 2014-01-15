@@ -80,13 +80,14 @@ var packageTypeNames map[PackagingTypeCode]string = map[PackagingTypeCode]string
 PICKUP TYPE:
 Default value is 01.
 Valid values are:
-01 - Daily Pickup;
-03 - Customer Counter;
-06 - One Time Pickup;
-07 - On Call Air;
-19 - Letter Center;
-20 - Air Service Center.
-Refer to the Rate Chart table in Appendix C for rate type based on Pickup Type and Customer Classification Code.
+	01 = Daily Pickup,
+	03 = Customer Counter,
+	06 = One Time Pickup,
+	07 = On Call Air,
+	19 = Letter Center,
+	20 = Air Service Center.
+Refer to the Rate Chart table in Appendix C for rate type based on Pickup Type
+and Customer Classification Code.
 */
 type PickupTypeCode string
 
@@ -114,28 +115,28 @@ SERVICE:
 Required for Rating and Ignored for Shopping.
 
 Valid domestic values:
-14 = Next Day Air Early AM,
-01 = Next Day Air,
-13 = Next Day Air Saver,
-59 = 2nd Day Air AM,
-02 = 2nd Day Air,
-12 = 3 Day Select,
-03 = Ground.
+	14 = Next Day Air Early AM,
+	01 = Next Day Air,
+	13 = Next Day Air Saver,
+	59 = 2nd Day Air AM,
+	02 = 2nd Day Air,
+	12 = 3 Day Select,
+	03 = Ground
 
 Valid international values:
-11 = Standard,
-07 = Worldwide Express,
-54 = Worldwide Express Plus,
-08 = Worldwide Expedited,
-65 = Saver.
+	11 = Standard,
+	07 = Worldwide Express,
+	54 = Worldwide Express Plus,
+	08 = Worldwide Expedited,
+	65 = Saver.
 
 Valid Poland to Poland
 Same Day values:
-82 = UPS Today Standard,
-83 = UPS Today Dedicated Courier,
-84 = UPS Today Intercity,
-85 = UPS Today Express,
-86 = UPS Today Express Saver
+	82 = UPS Today Standard,
+	83 = UPS Today Dedicated Courier,
+	84 = UPS Today Intercity,
+	85 = UPS Today Express,
+	86 = UPS Today Express Saver
 */
 
 type ServiceCode string
