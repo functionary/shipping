@@ -16,6 +16,7 @@ type Address struct {
 	PostalCode    string
 	Country       string
 	Phone         string
+	Fax           string
 	Email         string
 }
 
@@ -33,6 +34,7 @@ type AddressViewModel struct {
 	Country        string
 	Countries      []bucket.HTMLOption
 	Phone          string
+	Fax            string
 	Email          string
 }
 
@@ -53,6 +55,7 @@ func (addr *Address) ViewModel() *AddressViewModel {
 	avm.PostalCode = addr.PostalCode
 	avm.Country = addr.Country
 	avm.Phone = addr.Phone
+	avm.Fax = addr.Fax
 	avm.Email = addr.Email
 
 	for _, state := range states {
