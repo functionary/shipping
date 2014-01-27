@@ -40,23 +40,26 @@ type AddressViewModel struct {
 
 func (addr *Address) ViewModel() *AddressViewModel {
 
-	avm := new(AddressViewModel)
-	avm.StateProvinces = make([]bucket.HTMLOption, 0)
-	avm.Countries = make([]bucket.HTMLOption, 0)
+	// This literal declaration is much prettier than explicit assignment to the
+	// struct fields.
 
-	avm.NameFirst = addr.NameFirst
-	avm.NameLast = addr.NameLast
-	avm.Company = addr.Company
-	avm.Street1 = addr.Street1
-	avm.Street2 = addr.Street2
-	avm.Street3 = addr.Street3
-	avm.City = addr.City
-	avm.StateProvince = addr.StateProvince
-	avm.PostalCode = addr.PostalCode
-	avm.Country = addr.Country
-	avm.Phone = addr.Phone
-	avm.Fax = addr.Fax
-	avm.Email = addr.Email
+	avm := &AddressViewModel{
+		NameFirst:      addr.NameFirst,
+		NameLast:       addr.NameLast,
+		Company:        addr.Company,
+		Street1:        addr.Street1,
+		Street2:        addr.Street2,
+		Street3:        addr.Street3,
+		City:           addr.City,
+		StateProvince:  addr.StateProvince,
+		StateProvinces: make([]bucket.HTMLOption, 0),
+		PostalCode:     addr.PostalCode,
+		Country:        addr.Country,
+		Countries:      make([]bucket.HTMLOption, 0),
+		Phone:          addr.Phone,
+		Fax:            addr.Fax,
+		Email:          addr.Email,
+	}
 
 	for _, state := range states {
 		if state.Value == addr.StateProvince {
