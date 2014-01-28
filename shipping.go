@@ -3,7 +3,7 @@ package shipping
 // This is a more generic form, used primary for output.
 type Estimate struct {
 	Name     string
-	Provider string // We're just going to distinguish between shippers using a string ("UPS", "FedEx", "USPS", etc.) for now.
+	Provider Carrier
 	Service  string
 	Price    float64
 }
@@ -22,3 +22,11 @@ type Package struct {
 	Height float64
 	Length float64
 }
+
+type Carrier string
+
+const (
+	FedEx Carrier = "FedEx"
+	UPS   Carrier = "UPS"
+	USPS  Carrier = "USPS"
+)
