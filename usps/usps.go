@@ -191,7 +191,7 @@ func (p *Package) validate() error {
 		p.IsLarge = true
 	}
 
-	if (p.Service == ServiceFirstClass) || (p.Service == ServiceFirstClass) || (p.Service == ServiceFirstClass) {
+	if (p.Service == ServiceFirstClass) || (p.Service == ServiceFirstClassComm) || (p.Service == ServiceFirstClassCommHFP) {
 		p.IsFirstClass = true
 	}
 
